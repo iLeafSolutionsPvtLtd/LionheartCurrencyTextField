@@ -288,6 +288,7 @@ open class LionheartCurrencyTextField: UITextField, UITextFieldIdentifiable, UIT
 
         currencyFormatter.minimumFractionDigits = decimalPlaces
         text = currencyFormatter.string(from: value)
+        passthroughDelegate?.textFieldDidEndEditing?(textField)
     }
     
     open func textFieldShouldClear(_ textField: UITextField) -> Bool {
